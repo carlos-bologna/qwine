@@ -71,8 +71,7 @@ Sendo assim, decidimos agrupar as classes resultando nas seguintes novas classif
 
 Após essa decisão, a otimização da acurácia pareceu ser a mais adequada, além do quê, a aplicação do negócio ainda é desconhecida.
 
-Testamos dois algoritmos: Random Forest e XGBoost. O primeiro apresentou melhor acurácia na base de teste, isto é, uma fatia do dataset foi separada logo no início, para ser utilizada como uma espécie simulação de uma base em produção. Técnica exaustivamente utilizada em machine learning, contudo, é extremamente importante que esta base .....
-
+Testamos dois algoritmos: Random Forest e XGBoost. O primeiro apresentou melhor acurácia na base de teste. Como base de teste, podemos entender uma fatia do dataset que foi separada logo no início, para ser utilizada como uma espécie simulação de uma base em produção, técnica exaustivamente utilizada em machine learning, contudo, é extremamente importante que esta base seja completamente isolada no decorrer da implementação do modelo, pois qualquer "espiada" neste conjunto de dados, pode influenciar na generalização do modelo, isto é, o modelo pode apresentar boa métrica durante a implementação, contudo, não será assertivo em produção.
 
 # Propostas para Melhorar o Modelo
 
@@ -88,3 +87,10 @@ Algumas ações que poderiam ser aplicadas a fim de melhorarmos o modelo:
 * Excluir variáveis altamente correlacionadas.
 * Otimizar os hiperparâmetros do algoritmo XGBClassifier (embora esteja no código, eles não foram parametrizados).
 * Fazer ensemble dos modelos com Random Forest e XGBClassifier, como Stacking por exemplo, mas dependerá também do ambiente em produção, pois o modelo com ensemble tende a ficar bem mais pesado e as vezes inviável em produção.
+
+# Propostas para Melhorar a Avaliação
+
+Gostaria de sugerir a utilização do Kaggle como plataforma de avaliação do cientista de dados, pois isso permitirá um isolamento da base de teste e, até que o candidato não seja aprovado, não é necessário o compartilhamento do código, deixando o cientista mais à vontade em utilizar sua caixa de ferramentas a fim de chegar na melhor métrica possível. É claro que a análise do código faz parte da avaliação, contudo, esta poderia ser uma etapa posterior da avaliação.
+O Kaggle, além de permitir competições específicas e restritas a determinado objetivo, como por exemplo a avalização de um candidato, possibilitaria também a comparação entre os competidores.
+
+Deixo aqui meu agradecimento pela oportunidade.
